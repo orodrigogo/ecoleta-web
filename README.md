@@ -1,6 +1,7 @@
 <div align="center">
   <h1>:recycle:</h1>
   <h1>Frontend do Marketplace de coleta de resíduos</h1>
+  <small>Rodrigo Gonçalves Santana - 2020</small>
 </div>
 
 <p align="center">
