@@ -18,7 +18,7 @@
 - LeafFlet Map
 - React LeaFlet Component
 - React Router Dom
-- IBGE Api resources
+- IBGE Api resources (https://servicodados.ibge.gov.br/api/docs/localidades?versao=1)
 
 
 ## Available Scripts
