@@ -1,7 +1,6 @@
 <div align="center">
   <h1>:recycle:</h1>
   <h1>Frontend do Marketplace de coleta de resíduos</h1>
-  <small>Rodrigo Gonçalves Santana - 2020</small>
 </div>
 
 
@@ -54,7 +53,11 @@ Para navegação entre as páginas, foi utilizada a biblioteca **React Router Do
 
 
 
-Para listar **Estados e Cidades dinâmicamente** foi utilizado a **API do IBGE**. :earth_americas: 
- <br/>
+Para listar **Estados e Cidades dinâmicamente** foi utilizado a **API do IBGE**. :earth_americas: <br/>
 :paperclip: Referência da API do IBGE: https://servicodados.ibge.gov.br/api/docs/localidades?versao=1
 
+
+
+
+
+<small align="center">Rodrigo Gonçalves Santana - 2020</small>
