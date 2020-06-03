@@ -2,7 +2,9 @@
   Frontend do Marketplace de coleta de resíduos
 </h3>
 
-<img src="ecoletaweb.gif" />
+<p align="center">
+  <img src="ecoletaweb.gif">
+</p>
 
 ### :wrench: Stack
 
