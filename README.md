@@ -60,4 +60,6 @@ Para listar **Estados e Cidades dinâmicamente** foi utilizado a **API do IBGE**
 
 
 
-<small align="center">Rodrigo Gonçalves Santana - 2020</small>
+<div align="center">
+  <small>Rodrigo Gonçalves Santana - 2020</small>
+</div>
