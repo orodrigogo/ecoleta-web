@@ -116,6 +116,8 @@ const CreatePoint = () => {
     })
   }
 
+
+
   function handleSelectItem(id: number) {
     const alreadySelected = selectedItems.findIndex(item => item === id);
 
@@ -131,6 +133,33 @@ const CreatePoint = () => {
 
 
 
+  async function handleSubmit(event: FormEvent){
+    event.preventDefault();
+
+    const {name, email, whatsapp} = formaData;
+    const uf = selectedUf;
+    const city = selectedCity;
+    const [latitude, longitude] = selectedPosition;
+    const items = selectedItems;
+
+    const data = {
+      name,
+      email,
+      whatsapp,
+      uf,
+      city,
+      latitude,
+      longitude,
+      items
+    }
+
+    await api.post('/points', data);
+
+    history.push('/success');
+  }
+
+
+
   return (
       <div id="page-create-point">
         <header>
@@ -142,7 +171,7 @@ const CreatePoint = () => {
           </Link>
         </header>
 
-        <form>
+        <form onSubmit={handleSubmit}>
           <h1>Cadastro do <br/> ponto de coleta</h1>
 
           <fieldset>
@@ -189,13 +218,13 @@ const CreatePoint = () => {
               <span>Selecione o endereço do mapa</span>
             </legend>
 
-            <Map center={[-20.9474023,-48.4487479]} zoom={15} onclick={handleMapClick}>
+            <Map center={initialPosition} zoom={15} onclick={handleMapClick}>
               <TileLayer
                 attribution='&amp;copy <a href="//osm.org/copyright">OpenStreetMap</a> contributors'
                 url="//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
 
-              <Marker position={[-20.9474023,-48.4487479]} />
+              <Marker position={selectedPosition} />
             </Map>
 
             <div className="field-group">
