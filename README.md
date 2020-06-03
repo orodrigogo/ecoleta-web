@@ -7,5 +7,10 @@
 * ReactJs
 * TypeScript
 
+### :wrench: Features
+* React Leaflet para utilização e integração com mapas (https://react-leaflet.js.org/).
+* Leaft https://leafletjs.com/
+
+
 
 ### :rocket: Features
