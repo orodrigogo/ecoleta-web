@@ -1,15 +1,17 @@
 import React, {useEffect, useState, ChangeEvent, FormEvent} from 'react';
 import axios from 'axios';
 import {Link, useHistory} from 'react-router-dom';
-import  {LeafletMouseEvent} from 'leaflet';
-import { FiArrowLeft } from 'react-icons/fi';
-import { Map, TileLayer, Marker } from 'react-leaflet';
 
+import { Map, TileLayer, Marker } from 'react-leaflet';
+import  {LeafletMouseEvent} from 'leaflet';
+
+import { FiArrowLeft } from 'react-icons/fi';
 import './styles.css';
+import logo from '../../assets/logo.svg';
 
 import api from '../../services/api';
 
-import logo from '../../assets/logo.svg';
+
 
 // Interfaces
 interface Item {
@@ -134,6 +136,7 @@ const CreatePoint = () => {
 
 
   async function handleSubmit(event: FormEvent){
+    // Para evitar load da página.
     event.preventDefault();
 
     const {name, email, whatsapp} = formaData;
@@ -156,6 +159,7 @@ const CreatePoint = () => {
     await api.post('/points', data);
 
     history.push('/success');
+    
   }
 
 
@@ -186,6 +190,7 @@ const CreatePoint = () => {
                 name="name"
                 id="name"
                 onChange={handleInputChange}
+                required
               />
             </div>
 
@@ -197,6 +202,7 @@ const CreatePoint = () => {
                   name="email"
                   id="email"
                   onChange={handleInputChange}
+                  required
                 />
               </div>
 
@@ -207,6 +213,7 @@ const CreatePoint = () => {
                   name="whatsapp"
                   id="whatsapp"
                   onChange={handleInputChange}
+                  required
                 />
               </div>
             </div>
