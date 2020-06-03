@@ -2,6 +2,8 @@
   Frontend do Marketplace de coleta de resíduos
 </h3>
 
+<img src="ecoletaweb.gif" />
+
 ### :wrench: Stack
 
 * ReactJs
