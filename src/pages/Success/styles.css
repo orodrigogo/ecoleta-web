@@ -1,0 +1,30 @@
+.success-message {
+  background: #0E0A14;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.success-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.success-message div {
+  width: 100px;
+  height: 100px;
+}
+
+.success-message svg ,
+.success-message h1 {
+  color: #FFFFFF;
+}
+
+.success-message svg{
+  color: #34CB79;
+}
+     
+     

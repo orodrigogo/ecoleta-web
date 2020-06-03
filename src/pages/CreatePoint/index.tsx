@@ -1,6 +1,7 @@
 import React, {useEffect, useState, ChangeEvent, FormEvent} from 'react';
 import axios from 'axios';
 import {Link, useHistory} from 'react-router-dom';
+import  {LeafletMouseEvent} from 'leaflet';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Map, TileLayer, Marker } from 'react-leaflet';
 
@@ -46,6 +47,15 @@ const CreatePoint = () => {
   const history = useHistory();
 
 
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(position => {
+      const {latitude, longitude} = position.coords;
+
+      setInitialPosition([latitude, longitude]);
+    })
+  },[])
+
+
 
   useEffect(() => {
     api.get('/items').then(response => { setItems(response.data) });
@@ -85,6 +95,13 @@ const CreatePoint = () => {
   function handleSelectCity(event: ChangeEvent<HTMLSelectElement>) {
     const city = event.target.value;
     setSelectedCity(city)
+  }
+
+  function handleMapClick(event: LeafletMouseEvent) {
+    setSelectedPosition([
+      event.latlng.lat,
+      event.latlng.lng
+    ])
   }
 
 
@@ -172,7 +189,7 @@ const CreatePoint = () => {
               <span>Selecione o endereço do mapa</span>
             </legend>
 
-            <Map center={[-20.9474023,-48.4487479]} zoom={15}>
+            <Map center={[-20.9474023,-48.4487479]} zoom={15} onclick={handleMapClick}>
               <TileLayer
                 attribution='&amp;copy <a href="//osm.org/copyright">OpenStreetMap</a> contributors'
                 url="//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -223,7 +240,11 @@ const CreatePoint = () => {
             <ul className="items-grid">
               {
                 items.map(item => (
-                  <li key={item.id}>
+                  <li 
+                    key={item.id}
+                    onClick={() => handleSelectItem(item.id)}
+                    className={selectedItems.includes(item.id) ? 'selected' : ''}
+                  >
                     <img src={item.image_url} alt={item.title}/>
                     <span>{item.title}</span>
                   </li>
