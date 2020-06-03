@@ -1,5 +1,5 @@
 import React, {useEffect, useState, ChangeEvent, FormEvent} from 'react';
-import { Link } from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Map, TileLayer, Marker } from 'react-leaflet';
 
@@ -29,11 +29,38 @@ const CreatePoint = () => {
   const [ufs, setUfs] = useState<string[]>([]);
   const [cities, setCities] = useState<string[]>([]);
 
+  const [initialPosition, setInitialPosition] = useState<[number, number]>([0,0]);
+
+  const [formaData, setFormData] = useState({
+    name: '',
+    email: '',
+    whatsapp: '',
+  })
+
+  const [selectedUf, setSelectedUf] = useState('0');
+  const [selectedCity, setSelectedCity] = useState('0');
+  const [selectedItems, setSelectedItems] = useState<number[]>([]);
+  const [selectedPosition, setSelectedPosition] = useState<[number, number]>([0,0]);
+
+  const history = useHistory();
+
 
 
   useEffect(() => {
     api.get('/items').then(response => { setItems(response.data) });
   }, []);
+
+
+
+  function handleInputChange(event: ChangeEvent<HTMLInputElement>) {
+
+    const {name, value} = event.target;
+
+    setFormData({
+      ...formaData,
+      [name]: value
+    })
+  }
 
 
   return (
@@ -61,6 +88,7 @@ const CreatePoint = () => {
                 type="text"
                 name="name"
                 id="name"
+                onChange={handleInputChange}
               />
             </div>
 
@@ -71,6 +99,7 @@ const CreatePoint = () => {
                   type="email"
                   name="email"
                   id="email"
+                  onChange={handleInputChange}
                 />
               </div>
 
@@ -80,6 +109,7 @@ const CreatePoint = () => {
                   type="text"
                   name="whatsapp"
                   id="whatsapp"
+                  onChange={handleInputChange}
                 />
               </div>
             </div>
