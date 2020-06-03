@@ -1,3 +1,6 @@
+<h1 align="center">
+  :recycle:
+</h1>
 <h3 align="center">
   Frontend do Marketplace de coleta de resíduos
 </h3>
