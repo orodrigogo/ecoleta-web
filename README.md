@@ -1,9 +1,7 @@
-<h1 align="center">
-  :recycle:
-</h1>
-<h3 align="center">
-  Frontend do Marketplace de coleta de resíduos
-</h3>
+<div align="center">
+  <h1>:recycle:</h1>
+  <h1>Frontend do Marketplace de coleta de resíduos</h1>
+</div>
 
 <p align="center">
   <img src="ecoletaweb.gif">
