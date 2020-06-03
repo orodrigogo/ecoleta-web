@@ -11,6 +11,18 @@
 * React Leaflet para utilização e integração com mapas (https://react-leaflet.js.org/).
 * Leaft https://leafletjs.com/
 
+:rocket: Technologies
+
+- ReactJS
+- Axios
+- LeafFlet Map
+- React LeaFlet Component
+- React Router Dom
+- IBGE Api resources
 
 
-### :rocket: Features
+## Available Scripts
+
+In the project directory, you can run:
+
+### `yarn start`
