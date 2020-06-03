@@ -4,7 +4,7 @@
 </div>
 
 <p align="center">
-  <img src="ecoletaweb.gif">
+  <img src="ecoletaweb.gif" widht="100%">
 </p>
 
 ### :wrench: Stack
