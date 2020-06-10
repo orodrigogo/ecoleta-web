@@ -5,11 +5,14 @@ import {Link, useHistory} from 'react-router-dom';
 import { Map, TileLayer, Marker } from 'react-leaflet';
 import  {LeafletMouseEvent} from 'leaflet';
 
+import Dropzone from '../../components/Dropzone';
+
 import { FiArrowLeft } from 'react-icons/fi';
 import './styles.css';
 import logo from '../../assets/logo.svg';
 
 import api from '../../services/api';
+
 
 
 
@@ -177,6 +180,8 @@ const CreatePoint = () => {
 
         <form onSubmit={handleSubmit}>
           <h1>Cadastro do <br/> ponto de coleta</h1>
+
+          <Dropzone />
 
           <fieldset>
             <legend>
