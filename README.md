@@ -26,6 +26,7 @@ No desenvolvimento do **Ecoleta** foi utilizado **ReactJs** com **TypeScript**.
 
 A plataforma também possui as seguintes **integrações**:
 
+- [x] Upload de Imagem :camera: 
 - [x] Integração com Mapa :earth_americas: 
 - [x] Integração com API do IBGE :satellite: 
 - [x] Integração com Backend via REST API :electric_plug:
@@ -38,7 +39,7 @@ Na **Integração com Mapa** é identificado a localização atual do usuário. 
 Para isso, foi utilizado as seguintes bibliotecas:
 
 - [x] React Leaflet: para utilização e integração com mapas. <br/> 
-:paperclip: Link: https://*react-leaflet.js.org/.
+:paperclip: Link: https://react-leaflet.js.org/.
 
 - [x] Leaft: biblioteca JavaScript de código aberto para mapas interativos e compatíveis ecom dispositivos móveis. <br/>
 :paperclip: Link: https://leafletjs.com/
